@@ -72,7 +72,6 @@ namespace DoAnLTWindow
             mnuAdmin.Name = "mnuAdmin";
             mnuAdmin.Size = new System.Drawing.Size(55, 20);
             mnuAdmin.Text = "Admin";
-     
             // 
             // mnuTaiKhoan
             // 
@@ -80,20 +79,22 @@ namespace DoAnLTWindow
             mnuTaiKhoan.Name = "mnuTaiKhoan";
             mnuTaiKhoan.Size = new System.Drawing.Size(69, 20);
             mnuTaiKhoan.Text = "Tài khoản";
-            
             // 
             // mnuThongTinTaiKhoan
             // 
             mnuThongTinTaiKhoan.Name = "mnuThongTinTaiKhoan";
-            mnuThongTinTaiKhoan.Size = new System.Drawing.Size(129, 22);
+            mnuThongTinTaiKhoan.Size = new System.Drawing.Size(180, 22);
             mnuThongTinTaiKhoan.Text = "Thông Tin";
-  
+            /* Phần thay đổi
+            mnuThongTinTaiKhoan.Click += thôngTinCáNhânToolStripMenuItem_Click;
+            */
+
             // 
             // mnuDangXuat
             // 
             mnuDangXuat.Name = "mnuDangXuat";
-            mnuDangXuat.Size = new System.Drawing.Size(129, 22);
-            mnuDangXuat.Text = "Đăng Xuất";
+            mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            mnuDangXuat.Text = "Đăng Xuất / Thoát";
             mnuDangXuat.Click += đăngXuấtToolStripMenuItem_Click;
             // 
             // đặtBànToolStripMenuItem
@@ -101,7 +102,6 @@ namespace DoAnLTWindow
             đặtBànToolStripMenuItem.Name = "đặtBànToolStripMenuItem";
             đặtBànToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             đặtBànToolStripMenuItem.Text = "Đặt Bàn";
-          
             // 
             // panel2
             // 
@@ -168,7 +168,6 @@ namespace DoAnLTWindow
             cboCategory.Name = "cboCategory";
             cboCategory.Size = new System.Drawing.Size(129, 23);
             cboCategory.TabIndex = 0;
-      
             // 
             // cboFood
             // 
@@ -195,7 +194,6 @@ namespace DoAnLTWindow
             btnAddFood.TabIndex = 2;
             btnAddFood.Text = "Thêm món";
             btnAddFood.UseVisualStyleBackColor = false;
-     
             // 
             // txtTotalPrice
             // 
@@ -217,7 +215,6 @@ namespace DoAnLTWindow
             btnThanhToan.TabIndex = 4;
             btnThanhToan.Text = "Thanh Toán";
             btnThanhToan.UseVisualStyleBackColor = false;
-        
             // 
             // flpTable
             // 
@@ -227,7 +224,6 @@ namespace DoAnLTWindow
             flpTable.Name = "flpTable";
             flpTable.Size = new System.Drawing.Size(300, 277);
             flpTable.TabIndex = 3;
-            
             // 
             // btnLuu
             // 
@@ -238,7 +234,6 @@ namespace DoAnLTWindow
             btnLuu.TabIndex = 7;
             btnLuu.Text = "Lưu Bàn";
             btnLuu.UseVisualStyleBackColor = false;
-         
             // 
             // btnChange
             // 
@@ -249,7 +244,6 @@ namespace DoAnLTWindow
             btnChange.TabIndex = 8;
             btnChange.Text = "Chuyển Bàn";
             btnChange.UseVisualStyleBackColor = false;
-      
             // 
             // frmQuanLy
             // 
@@ -275,7 +269,6 @@ namespace DoAnLTWindow
             Name = "frmQuanLy";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Quản Lý";
-            
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel2.ResumeLayout(false);

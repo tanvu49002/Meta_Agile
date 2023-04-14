@@ -41,7 +41,7 @@ namespace DoAnLTWindow
             isSaved = false;
             isAddedFood = false;
             this.LoginAcc = acc;
-         
+
         }
         void typeAcc(string type)
         {
@@ -57,5 +57,11 @@ namespace DoAnLTWindow
         {
             this.Close();
         }
+        /* Phần thay đổi
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAccProfile f = new frmAccProfile(LoginAcc);
+            f.ShowDialog();
+        }*/
     }
 }

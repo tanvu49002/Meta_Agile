@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Download\\LoginFeature\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\DisplayAccInfor\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "D:\\Download\\LoginFeature\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\DisplayAccInfor\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Download\\LoginFeature\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\DisplayAccInfor\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "D:\\Download\\LoginFeature\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectPath": "D:\\Download\\DisplayAccInfor\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Download\\LoginFeature\\DoAnLTWindow\\obj\\",
+        "outputPath": "D:\\Download\\DisplayAccInfor\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
