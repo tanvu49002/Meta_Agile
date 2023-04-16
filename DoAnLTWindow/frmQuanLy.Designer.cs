@@ -85,9 +85,8 @@ namespace DoAnLTWindow
             mnuThongTinTaiKhoan.Name = "mnuThongTinTaiKhoan";
             mnuThongTinTaiKhoan.Size = new System.Drawing.Size(180, 22);
             mnuThongTinTaiKhoan.Text = "Thông Tin";
-            /* Phần thay đổi
             mnuThongTinTaiKhoan.Click += thôngTinCáNhânToolStripMenuItem_Click;
-            */
+            
 
             // 
             // mnuDangXuat

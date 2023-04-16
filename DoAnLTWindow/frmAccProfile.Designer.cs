@@ -187,7 +187,10 @@ namespace DoAnLTWindow
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Cập Nhật";
             btnUpdate.UseVisualStyleBackColor = false;
-           
+            /* Phần thay đổi
+            btnUpdate.Click += btnUpdate_Click;
+            */
+
             // 
             // groupBox1
             // 

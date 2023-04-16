@@ -57,11 +57,11 @@ namespace DoAnLTWindow
         {
             this.Close();
         }
-        /* Phần thay đổi
+        
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAccProfile f = new frmAccProfile(LoginAcc);
             f.ShowDialog();
-        }*/
+        }
     }
 }

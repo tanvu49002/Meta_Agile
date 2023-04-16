@@ -14,7 +14,7 @@ namespace DoAnLTWindow
 {
     public partial class frmAccProfile : Form
     {
-        /* Phần thay đổi
+        
         private Account loginAcc;
         public Account LoginAcc
         {
@@ -41,6 +41,44 @@ namespace DoAnLTWindow
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+       /* Phần thay đổi
+        void updateAccount()
+        {
+            string displayname = txtDisplayName.Text;
+
+            string pass = txtPass.Text;
+            string newpass = txtNewPass.Text.Replace(" ", "");
+            string reenterpass = txtReEnterPass.Text;
+            string username = txtUsername.Text;
+            if (newpass.Length == 0)
+            {
+                MessageBox.Show("Mật khẩu mới không hợp lệ !");
+            }
+            else if (newpass != reenterpass)
+            {
+                MessageBox.Show("Vui lòng nhập lại mật khẩu khớp với mật khẩu mới !");
+            }
+            else if (newpass == pass)
+            {
+                MessageBox.Show("Mật khẩu mới trùng với mật khẩu cũ !");
+            }
+            else
+            {
+                if (AccDAO.Instance.updateAccountInfo(username, displayname, pass, newpass))
+                {
+                    MessageBox.Show("Cập nhật thành công !");
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng mật khẩu !");
+                }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            updateAccount();
         }*/
     }
 }
