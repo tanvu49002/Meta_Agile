@@ -1,2 +1,0 @@
-- frmAccProfile.cs
-- frmAccprofile.Designer.cs -> tìm phần btnUpdate
