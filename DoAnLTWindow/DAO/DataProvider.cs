@@ -29,7 +29,7 @@ namespace DoAnLTWindow.DAO
             } 
         }
         private DataProvider() { }
-        private string connectionstring = @"Data Source=ADMIN\ADMIN;Initial Catalog=RESTAURANT;Integrated Security=True";
+        private string connectionstring = @"Data Source=DESKTOP-IAK7P2M\SQLEXPRESS;Initial Catalog=RESTAURANT;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

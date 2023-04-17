@@ -36,19 +36,11 @@ namespace DoAnLTWindow
                 
                 f.ShowDialog();
 
-                if (MessageBox.Show("Chọn Yes để đăng xuất / No để thoát khỏi chương trình !", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    
-                    this.Show();
-                }
-                else
-                {
-                    Application.Exit();
-                }
-
-
-            } else if (username == "" || pass == "") {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không được để trống !");
+                this.Close();
+            } 
+            else if (username == "" || pass == "")
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không được để trống!");
             }
             else
             {
@@ -58,16 +50,16 @@ namespace DoAnLTWindow
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có thực sự muốn thoát khỏi chương trình ?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                this.Show();
-            }
+            Application.Exit();
         }
 
-        
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thực sự muốn thoát khỏi chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+
+        }
     }
 }

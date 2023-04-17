@@ -96,7 +96,7 @@
             this.cbbTableName.Name = "cbbTableName";
             this.cbbTableName.Size = new System.Drawing.Size(207, 24);
             this.cbbTableName.TabIndex = 1;
-          
+            this.cbbTableName.SelectedIndexChanged += new System.EventHandler(this.cbbTableName_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -106,7 +106,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Bàn";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -196,7 +196,7 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Phút";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // nbudMinute
             // 
@@ -231,7 +231,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(326, 40);
             this.panel5.TabIndex = 3;
-           
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // dtOrderDate
             // 
@@ -259,7 +259,7 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
-        
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnFind
             // 
@@ -270,7 +270,7 @@
             this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
-        
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnCancel
             // 
@@ -281,7 +281,7 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Huỷ";
             this.btnCancel.UseVisualStyleBackColor = false;
-         
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // comboBox2
             // 
@@ -312,7 +312,7 @@
             this.btn_Exit.TabIndex = 7;
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.UseVisualStyleBackColor = false;
-        
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // FrmOrder
             // 
@@ -329,7 +329,7 @@
             this.Name = "FrmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrder";
-   
+            this.Load += new System.EventHandler(this.FrmOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

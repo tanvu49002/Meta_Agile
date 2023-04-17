@@ -15,12 +15,6 @@ namespace DoAnLTWindow
 {
     public partial class frmQuanLy : Form
     {
-
-
-        private int curr_idTable;
-        private bool isSaved;
-        private bool isAddedFood;
-        private Button oldButton = null;
         private Account loginAcc;
         public Account LoginAcc
         {
@@ -37,12 +31,10 @@ namespace DoAnLTWindow
         public frmQuanLy(Account acc)
         {
             InitializeComponent();
-            curr_idTable = -1;
-            isSaved = false;
-            isAddedFood = false;
             this.LoginAcc = acc;
-
+            loadCategory();
         }
+        #region METHODS
         void typeAcc(string type)
         {
             if (type == "ADMIN")
@@ -53,15 +45,58 @@ namespace DoAnLTWindow
             }
             mnuTaiKhoan.Text += " (" + LoginAcc.Displayname + ")";
         }
+        void loadCategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.getListCategory();
+            cboCategory.DataSource = listCategory;
+            cboCategory.DisplayMember = "NAME";
+        }
+        void loadFoodByCategory(int id)
+        {
+            List<Food> listFood = FoodDAO.Instance.getFoodList(id);
+            cboFood.DataSource = listFood;
+            cboFood.DisplayMember = "NAME";
+        }
+        
+        
+
+        #endregion
+        #region EVENTS
+        
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmLogin f = new frmLogin();
+            f.Show();
         }
-        
+
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAccProfile f = new frmAccProfile(LoginAcc);
+
             f.ShowDialog();
         }
+        
+        
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cbo = sender as ComboBox;
+            if (cbo.SelectedItem == null)
+            {
+                return;
+            }
+            Category selected = cbo.SelectedItem as Category;
+            id = selected.ID;
+            loadFoodByCategory(id);
+        }
+        #endregion
+
+        
+        private void frmQuanLy_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
+
 }
