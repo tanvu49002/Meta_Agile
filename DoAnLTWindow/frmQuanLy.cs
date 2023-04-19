@@ -41,7 +41,7 @@ namespace DoAnLTWindow
             isSaved = false;
             isAddedFood = false;
             this.LoginAcc = acc;
-            
+           
             loadTable();
             
             loadCategory();
@@ -57,7 +57,24 @@ namespace DoAnLTWindow
             }
             mnuTaiKhoan.Text += " (" + LoginAcc.Displayname + ")";
         }
-      
+        
+        void showBill(int id)
+        {
+            lvwBill.Items.Clear();
+            List<Menu> listbilldetail = MenuDAO.Instance.getListMenu(id);
+            float TotalPrice = 0;
+            foreach (Menu item in listbilldetail)
+            {
+                ListViewItem lvwItem = new ListViewItem(item.FoodName.ToString());
+                lvwItem.SubItems.Add(item.Count.ToString());
+                lvwItem.SubItems.Add(item.Price.ToString());
+                lvwItem.SubItems.Add(item.TotalPrice.ToString());
+                TotalPrice += item.TotalPrice;
+                lvwBill.Items.Add(lvwItem);
+            }
+            CultureInfo culture = new CultureInfo("vi-VN");
+        }
+        
         void loadCategory()
         {
             List<Category> listCategory = CategoryDAO.Instance.getListCategory();
@@ -83,6 +100,20 @@ namespace DoAnLTWindow
                     Height = TableDAO.TableHeight
                 };
                 btn.Text = item.Name + Environment.NewLine + "(" + item.Status + ")";
+                if (item.Status2 != 0)
+                {
+                    DataTable pTable = DataProvider.Instance.ExecuteQuery("EXEC GET_ORDERED_TABLE " + item.ID);
+                    if (pTable.Rows.Count > 0)
+                    {
+                        string s = pTable.Rows[0]["ORDER_TIME"].ToString();
+                        btn.Text += Environment.NewLine + s;
+                    }
+                    else
+                    {
+                        DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI2 = 0 WHERE ID = " + item.ID);
+                    }
+                }
+                btn.Click += btn_Click;
                 btn.Tag = item;
                 btn.BackColor = Color.SandyBrown;
                 btn.FlatAppearance.BorderColor = Color.Red;
@@ -95,6 +126,7 @@ namespace DoAnLTWindow
                 }
             }
         }
+        
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -105,7 +137,31 @@ namespace DoAnLTWindow
             frmAccProfile f = new frmAccProfile(LoginAcc);
             f.ShowDialog();
         }
-      
+        
+       void btn_Click(object sender, EventArgs e)
+       {
+           Button pButton = sender as Button;
+           if (oldButton != null)
+               oldButton.FlatStyle = FlatStyle.Standard;
+           oldButton = pButton;
+           pButton.FlatStyle = FlatStyle.Flat;
+           Table pData = pButton.Tag as Table;
+           int tableID = pData.ID;
+           if (pData.Status == "Đã Thanh Toán")
+               btnThanhToan.Text = "Hoàn Thành";
+           if (isAddedFood == true && curr_idTable != tableID && curr_idTable != -1 && isSaved == false)
+           {
+               int id_bill = BillDAO.Instance.getUncheckBill(curr_idTable);
+               DataProvider.Instance.ExecuteNonQuery("EXEC DELETE_BILL_UNSAVED " + id_bill);
+               isAddedFood = false;
+           }
+           isSaved = false;
+           isAddedFood = false;
+           curr_idTable = tableID;
+           lvwBill.Tag = (sender as Button).Tag;
+           showBill(tableID);
+       }
+       
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = 0;
@@ -118,5 +174,40 @@ namespace DoAnLTWindow
             id = selected.ID;
             loadFoodByCategory(id);
         }
+        
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            Table table = lvwBill.Tag as Table;
+            oldButton.Tag = table;
+            if (table == null)
+            {
+                MessageBox.Show("Hãy chọn bàn trước khi thêm");
+                return;
+            }
+            int idbill = BillDAO.Instance.getUncheckBill(table.ID);
+            int idfood = (cboFood.SelectedItem as Food).ID;
+            int count = (int)updFoodCount.Value;
+
+            isAddedFood = true;
+
+            if (idbill == -1)
+            {
+                BillDAO.Instance.insertBill(table.ID);
+                BillDetailDAO.Instance.insertBillDetail(BillDAO.Instance.getMaxIdBill(), idfood, count);
+            }
+            else
+            {
+                BillDetailDAO.Instance.insertBillDetail(idbill, idfood, count);
+            }
+            showBill(table.ID);
+            loadTable();
+        }
+       
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            isSaved = true;
+            loadTable();
+        }
+        
     }
 }

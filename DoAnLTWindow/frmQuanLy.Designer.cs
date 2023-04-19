@@ -197,6 +197,10 @@ namespace DoAnLTWindow
             btnAddFood.TabIndex = 2;
             btnAddFood.Text = "Thêm món";
             btnAddFood.UseVisualStyleBackColor = false;
+            
+            btnAddFood.Click += btnAddFood_Click;
+            
+
             // 
             // txtTotalPrice
             // 
@@ -237,6 +241,10 @@ namespace DoAnLTWindow
             btnLuu.TabIndex = 7;
             btnLuu.Text = "Lưu Bàn";
             btnLuu.UseVisualStyleBackColor = false;
+            
+            btnLuu.Click += btnLuu_Click;
+            
+
             // 
             // btnChange
             // 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\AddBillIntoTable\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\AddBillIntoTable\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\AddBillIntoTable\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectPath": "D:\\Download\\AddBillIntoTable\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Download\\DisplayListTables\\DoAnLTWindow\\obj\\",
+        "outputPath": "D:\\Download\\AddBillIntoTable\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
