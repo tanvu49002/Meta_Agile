@@ -279,7 +279,7 @@ namespace DoAnLTWindow
             this.btnResetPass.TabIndex = 4;
             this.btnResetPass.Text = "Đặt Lại Mật Khẩu";
             this.btnResetPass.UseVisualStyleBackColor = false;
-            
+           
             // 
             // btnEditAccount
             // 
@@ -290,7 +290,7 @@ namespace DoAnLTWindow
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = false;
-            
+           
             // 
             // btnDeleteAccount
             // 
@@ -312,7 +312,7 @@ namespace DoAnLTWindow
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm tài khoản";
             this.btnAddAccount.UseVisualStyleBackColor = false;
-            
+          
             // 
             // tabFood
             // 
@@ -348,7 +348,7 @@ namespace DoAnLTWindow
             this.btnShowFood.TabIndex = 3;
             this.btnShowFood.Text = "Xem danh sách món";
             this.btnShowFood.UseVisualStyleBackColor = false;
-            
+          
             // 
             // btnEditFood
             // 
@@ -359,7 +359,7 @@ namespace DoAnLTWindow
             this.btnEditFood.TabIndex = 2;
             this.btnEditFood.Text = "Sửa món";
             this.btnEditFood.UseVisualStyleBackColor = false;
-            
+          
             // 
             // btnDeleteFood
             // 
@@ -370,7 +370,7 @@ namespace DoAnLTWindow
             this.btnDeleteFood.TabIndex = 1;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = false;
-            
+        
             // 
             // btnAddFood
             // 
@@ -381,7 +381,7 @@ namespace DoAnLTWindow
             this.btnAddFood.TabIndex = 0;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = false;
-            
+           
             // 
             // panel5
             // 
@@ -495,7 +495,7 @@ namespace DoAnLTWindow
             this.txtFoodID.ReadOnly = true;
             this.txtFoodID.Size = new System.Drawing.Size(191, 21);
             this.txtFoodID.TabIndex = 1;
-            
+        
             // 
             // label1
             // 
@@ -555,7 +555,7 @@ namespace DoAnLTWindow
             this.btnSearchFood.TabIndex = 4;
             this.btnSearchFood.Text = "Tìm";
             this.btnSearchFood.UseVisualStyleBackColor = false;
-            
+          
             // 
             // tabBill
             // 
@@ -617,7 +617,7 @@ namespace DoAnLTWindow
             this.btnViewBill.TabIndex = 1;
             this.btnViewBill.Text = "Thống Kê";
             this.btnViewBill.UseVisualStyleBackColor = false;
-            
+          
             // 
             // dtpFromDate
             // 
@@ -683,7 +683,7 @@ namespace DoAnLTWindow
             this.btnAddMany.TabIndex = 9;
             this.btnAddMany.Text = "Thêm Nhiều";
             this.btnAddMany.UseVisualStyleBackColor = false;
-            
+           
             // 
             // btnChange
             // 
@@ -694,7 +694,7 @@ namespace DoAnLTWindow
             this.btnChange.TabIndex = 8;
             this.btnChange.Text = "Sửa Bàn";
             this.btnChange.UseVisualStyleBackColor = false;
-            
+          
             // 
             // btnDel
             // 
@@ -705,7 +705,7 @@ namespace DoAnLTWindow
             this.btnDel.TabIndex = 7;
             this.btnDel.Text = "Xoá Bàn";
             this.btnDel.UseVisualStyleBackColor = false;
-            
+       
             // 
             // btnAdd
             // 
@@ -716,7 +716,7 @@ namespace DoAnLTWindow
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Thêm Bàn";
             this.btnAdd.UseVisualStyleBackColor = false;
-            
+          
             // 
             // panel15
             // 
@@ -867,7 +867,7 @@ namespace DoAnLTWindow
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            
+       
             this.tabAccount.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel26.ResumeLayout(false);

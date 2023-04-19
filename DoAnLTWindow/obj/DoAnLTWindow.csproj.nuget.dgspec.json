@@ -1,30 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tanda\\Downloads\\DisplayListOfFood\\DisplayListOfFood\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tanda\\Downloads\\DisplayListOfFood\\DisplayListOfFood\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tanda\\Downloads\\DisplayListOfFood\\DisplayListOfFood\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "C:\\Users\\tanda\\Downloads\\DisplayListOfFood\\DisplayListOfFood\\DoAnLTWindow\\DoAnLTWindow.csproj",
-        "packagesPath": "C:\\Users\\tanda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tanda\\Downloads\\DisplayListOfFood\\DisplayListOfFood\\DoAnLTWindow\\obj\\",
+        "projectPath": "D:\\Download\\DisplayListTables\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Download\\DisplayListTables\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tanda\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net5.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
             "projectReferences": {}
           }
         },
@@ -35,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
           "dependencies": {
             "Microsoft.ReportViewer.WinForms": {
               "target": "Package",
@@ -66,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

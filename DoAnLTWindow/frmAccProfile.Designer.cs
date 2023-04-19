@@ -164,7 +164,7 @@ namespace DoAnLTWindow
             label3.Size = new System.Drawing.Size(113, 19);
             label3.TabIndex = 0;
             label3.Text = "Mật Khẩu Cũ:";
-            label3.Click += label3_Click;
+            
             // 
             // btnExit
             // 
@@ -176,7 +176,7 @@ namespace DoAnLTWindow
             btnExit.Text = "Thoát";
             btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
+           
             // 
             // btnUpdate
             // 
@@ -187,7 +187,10 @@ namespace DoAnLTWindow
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Cập Nhật";
             btnUpdate.UseVisualStyleBackColor = false;
+            
             btnUpdate.Click += btnUpdate_Click;
+            
+
             // 
             // groupBox1
             // 

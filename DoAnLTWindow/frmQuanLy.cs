@@ -15,6 +15,12 @@ namespace DoAnLTWindow
 {
     public partial class frmQuanLy : Form
     {
+
+
+        private int curr_idTable;
+        private bool isSaved;
+        private bool isAddedFood;
+        private Button oldButton = null;
         private Account loginAcc;
         public Account LoginAcc
         {
@@ -31,10 +37,16 @@ namespace DoAnLTWindow
         public frmQuanLy(Account acc)
         {
             InitializeComponent();
+            curr_idTable = -1;
+            isSaved = false;
+            isAddedFood = false;
             this.LoginAcc = acc;
+            
+            loadTable();
+            
             loadCategory();
+            
         }
-        #region METHODS
         void typeAcc(string type)
         {
             if (type == "ADMIN")
@@ -45,6 +57,7 @@ namespace DoAnLTWindow
             }
             mnuTaiKhoan.Text += " (" + LoginAcc.Displayname + ")";
         }
+      
         void loadCategory()
         {
             List<Category> listCategory = CategoryDAO.Instance.getListCategory();
@@ -58,26 +71,41 @@ namespace DoAnLTWindow
             cboFood.DisplayMember = "NAME";
         }
         
-        
-
-        #endregion
-        #region EVENTS
-        
+        public void loadTable()
+        {
+            flpTable.Controls.Clear();
+            List<Table> tableList = TableDAO.Instance.loadTableList();
+            foreach (Table item in tableList)
+            {
+                Button btn = new Button()
+                {
+                    Width = TableDAO.TableWidth,
+                    Height = TableDAO.TableHeight
+                };
+                btn.Text = item.Name + Environment.NewLine + "(" + item.Status + ")";
+                btn.Tag = item;
+                btn.BackColor = Color.SandyBrown;
+                btn.FlatAppearance.BorderColor = Color.Red;
+                btn.FlatAppearance.BorderSize = 2;
+                flpTable.Controls.Add(btn);
+                if (curr_idTable == item.ID)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    oldButton = btn;
+                }
+            }
+        }
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmLogin f = new frmLogin();
-            f.Show();
         }
-
+        
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAccProfile f = new frmAccProfile(LoginAcc);
-
             f.ShowDialog();
         }
-        
-        
+      
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = 0;
@@ -90,13 +118,5 @@ namespace DoAnLTWindow
             id = selected.ID;
             loadFoodByCategory(id);
         }
-        #endregion
-
-        
-        private void frmQuanLy_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
-
 }

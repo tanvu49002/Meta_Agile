@@ -14,7 +14,7 @@ namespace DoAnLTWindow
 {
     public partial class frmAccProfile : Form
     {
-
+        
         private Account loginAcc;
         public Account LoginAcc
         {
@@ -42,20 +42,26 @@ namespace DoAnLTWindow
         {
             this.Close();
         }
+       
         void updateAccount()
         {
             string displayname = txtDisplayName.Text;
+
             string pass = txtPass.Text;
-            string newpass = txtNewPass.Text;
+            string newpass = txtNewPass.Text.Replace(" ", "");
             string reenterpass = txtReEnterPass.Text;
             string username = txtUsername.Text;
-            if (newpass == "")
+            if (newpass.Length == 0)
             {
-                MessageBox.Show("Vui Lòng Nhập Mật Khẩu Mới");
+                MessageBox.Show("Mật khẩu mới không hợp lệ !");
             }
             else if (newpass != reenterpass)
             {
                 MessageBox.Show("Vui lòng nhập lại mật khẩu khớp với mật khẩu mới !");
+            }
+            else if (newpass == pass)
+            {
+                MessageBox.Show("Mật khẩu mới trùng với mật khẩu cũ !");
             }
             else
             {
@@ -73,11 +79,6 @@ namespace DoAnLTWindow
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             updateAccount();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
