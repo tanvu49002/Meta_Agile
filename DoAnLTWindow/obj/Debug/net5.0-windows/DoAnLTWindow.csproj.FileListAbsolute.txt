@@ -510,3 +510,37 @@ D:\Download\DisplayListTables\DoAnLTWindow\obj\Debug\net5.0-windows\refint\DoAnL
 D:\Download\DisplayListTables\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.pdb
 D:\Download\DisplayListTables\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.genruntimeconfig.cache
 D:\Download\DisplayListTables\DoAnLTWindow\obj\Debug\net5.0-windows\ref\DoAnLTWindow.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\DoAnLTWindow.exe
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\DoAnLTWindow.deps.json
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\DoAnLTWindow.runtimeconfig.json
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\DoAnLTWindow.runtimeconfig.dev.json
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\DoAnLTWindow.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\DoAnLTWindow.pdb
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\Microsoft.ReportViewer.WinForms.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.csproj.AssemblyReference.cache
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.frmAccProfile.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.frmAdmin.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.frmChangeTablecs.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.frmcustomerMoney.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.frmLogin.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.FrmOrder.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.frmQuanLy.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.FrmReport.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.Properties.Resources.resources
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.csproj.GenerateResource.cache
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.AssemblyInfoInputs.cache
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.AssemblyInfo.cs
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.csproj.CoreCompileInputs.cache
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.csproj.CopyComplete
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\refint\DoAnLTWindow.dll
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.pdb
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\DoAnLTWindow.genruntimeconfig.cache
+D:\Nam3_HK2\QTPT Agile\GITH\Meta_Agile\DoAnLTWindow\obj\Debug\net5.0-windows\ref\DoAnLTWindow.dll

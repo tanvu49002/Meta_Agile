@@ -87,7 +87,7 @@ namespace DoAnLTWindow
             cboFood.DataSource = listFood;
             cboFood.DisplayMember = "NAME";
         }
-        
+
         public void loadTable()
         {
             flpTable.Controls.Clear();
@@ -105,6 +105,7 @@ namespace DoAnLTWindow
                     DataTable pTable = DataProvider.Instance.ExecuteQuery("EXEC GET_ORDERED_TABLE " + item.ID);
                     if (pTable.Rows.Count > 0)
                     {
+                        
                         string s = pTable.Rows[0]["ORDER_TIME"].ToString();
                         btn.Text += Environment.NewLine + s;
                     }
@@ -115,7 +116,18 @@ namespace DoAnLTWindow
                 }
                 btn.Click += btn_Click;
                 btn.Tag = item;
-                btn.BackColor = Color.SandyBrown;
+                if (item.Status == "Đã Thanh Toán")
+                {
+                    btn.BackColor = Color.Cyan;
+                }
+                else if (item.Status == "Trống")
+                {
+                    btn.BackColor = Color.SandyBrown;
+                }
+                else
+                {
+                    btn.BackColor = Color.Salmon;
+                }
                 btn.FlatAppearance.BorderColor = Color.Red;
                 btn.FlatAppearance.BorderSize = 2;
                 flpTable.Controls.Add(btn);
@@ -126,7 +138,7 @@ namespace DoAnLTWindow
                 }
             }
         }
-        
+
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
