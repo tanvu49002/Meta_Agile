@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nam3_HK2\\QTPT Agile\\GITH\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "D:\\Nam3_HK2\\QTPT Agile\\GITH\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nam3_HK2\\QTPT Agile\\GITH\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "D:\\Nam3_HK2\\QTPT Agile\\GITH\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "D:\\Nam3_HK2\\QTPT Agile\\GITH\\Meta_Agile\\DoAnLTWindow\\obj\\",
+        "projectPath": "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

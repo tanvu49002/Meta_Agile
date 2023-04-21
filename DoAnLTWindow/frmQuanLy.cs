@@ -41,11 +41,10 @@ namespace DoAnLTWindow
             isSaved = false;
             isAddedFood = false;
             this.LoginAcc = acc;
-           
+            
             loadTable();
             
             loadCategory();
-            
         }
         void typeAcc(string type)
         {
@@ -73,6 +72,9 @@ namespace DoAnLTWindow
                 lvwBill.Items.Add(lvwItem);
             }
             CultureInfo culture = new CultureInfo("vi-VN");
+            /* Phần thay đổi
+            txtTotalPrice.Text = TotalPrice.ToString();
+            */
         }
         
         void loadCategory()
@@ -87,7 +89,7 @@ namespace DoAnLTWindow
             cboFood.DataSource = listFood;
             cboFood.DisplayMember = "NAME";
         }
-
+        
         public void loadTable()
         {
             flpTable.Controls.Clear();
@@ -105,7 +107,6 @@ namespace DoAnLTWindow
                     DataTable pTable = DataProvider.Instance.ExecuteQuery("EXEC GET_ORDERED_TABLE " + item.ID);
                     if (pTable.Rows.Count > 0)
                     {
-                        
                         string s = pTable.Rows[0]["ORDER_TIME"].ToString();
                         btn.Text += Environment.NewLine + s;
                     }
@@ -138,8 +139,8 @@ namespace DoAnLTWindow
                 }
             }
         }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        
+            private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -218,8 +219,9 @@ namespace DoAnLTWindow
         private void btnLuu_Click(object sender, EventArgs e)
         {
             isSaved = true;
+            DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI = N'Có Người' WHERE ID = " + curr_idTable);
             loadTable();
         }
-        
+
     }
 }
