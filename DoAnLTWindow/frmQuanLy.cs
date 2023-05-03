@@ -72,9 +72,8 @@ namespace DoAnLTWindow
                 lvwBill.Items.Add(lvwItem);
             }
             CultureInfo culture = new CultureInfo("vi-VN");
-            /* Phần thay đổi
             txtTotalPrice.Text = TotalPrice.ToString();
-            */
+           
         }
         
         void loadCategory()
@@ -140,7 +139,7 @@ namespace DoAnLTWindow
             }
         }
         
-            private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -148,11 +147,15 @@ namespace DoAnLTWindow
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAccProfile f = new frmAccProfile(LoginAcc);
+            f.Update += f_Update;
             f.ShowDialog();
         }
-        
-       void btn_Click(object sender, EventArgs e)
-       {
+        void f_Update (object sender, AccountEvent e)
+        {
+            mnuTaiKhoan.Text = "Tài Khoản (" + e.Acc.Displayname + ")";
+        }
+        void btn_Click(object sender, EventArgs e)
+        {
            Button pButton = sender as Button;
            if (oldButton != null)
                oldButton.FlatStyle = FlatStyle.Standard;
@@ -173,7 +176,7 @@ namespace DoAnLTWindow
            curr_idTable = tableID;
            lvwBill.Tag = (sender as Button).Tag;
            showBill(tableID);
-       }
+        }
        
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -215,13 +218,60 @@ namespace DoAnLTWindow
             showBill(table.ID);
             loadTable();
         }
-       
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            if (curr_idTable == -1)
+            {
+                MessageBox.Show("Vui lòng chọn bàn trước khi thao tác !");
+                return;
+            }
+            Table table = lvwBill.Tag as Table;
+            int idbill = BillDAO.Instance.getUncheckBill(table.ID);
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text);
+            if (table.Status == "Trống")
+            {
+                MessageBox.Show("Bàn trống hoặc chưa được lưu !");
+            }
+            else if (idbill != -1)
+            {
+                if (MessageBox.Show("Bạn có muốn thanh toán cho " + table.Name + "?", "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                BillDAO.Instance.checkOut(idbill, (float)totalPrice);
+                DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI = N'Trống' WHERE ID =" + table.ID);
+                showBill(table.ID);
+                loadTable();
+                return;
+            }
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             isSaved = true;
-            DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI = N'Có Người' WHERE ID = " + curr_idTable);
+            Table table = lvwBill.Tag as Table;
+            int idbill = BillDAO.Instance.getUncheckBill(table.ID);
+            if (idbill != -1)
+            {
+                DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI = N'Có Người' WHERE ID = " + curr_idTable);
+                loadTable();
+            }
+            
+        }
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            frmChangeTablecs f = new frmChangeTablecs();
+            f.ShowDialog();
+            this.Show();
+            loadTable();
+            loadCategory();
+
+        }
+        private void đặtBànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrder fr = new FrmOrder();
+            this.Hide();
+            fr.ShowDialog();
+            this.Show();
             loadTable();
         }
-
     }
 }

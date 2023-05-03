@@ -16,6 +16,6 @@ namespace DoAnLTWindow
 {
     public partial class FrmReport : Form
     {
-       
+
     }
 }

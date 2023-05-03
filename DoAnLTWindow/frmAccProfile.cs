@@ -48,14 +48,11 @@ namespace DoAnLTWindow
             string displayname = txtDisplayName.Text;
 
             string pass = txtPass.Text;
-            string newpass = txtNewPass.Text.Replace(" ", "");
+            string newpass = txtNewPass.Text;
             string reenterpass = txtReEnterPass.Text;
             string username = txtUsername.Text;
-            if (newpass.Length == 0)
-            {
-                MessageBox.Show("Mật khẩu mới không hợp lệ !");
-            }
-            else if (newpass != reenterpass)
+            
+            if (newpass != reenterpass)
             {
                 MessageBox.Show("Vui lòng nhập lại mật khẩu khớp với mật khẩu mới !");
             }
@@ -68,6 +65,10 @@ namespace DoAnLTWindow
                 if (AccDAO.Instance.updateAccountInfo(username, displayname, pass, newpass))
                 {
                     MessageBox.Show("Cập nhật thành công !");
+                    if (update != null)
+                    {
+                        update(this, new AccountEvent(AccDAO.Instance.getAccByUsername(username)));
+                    }
                 }
                 else
                 {
@@ -79,6 +80,34 @@ namespace DoAnLTWindow
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             updateAccount();
+        }
+
+        private event EventHandler<AccountEvent> update;
+        public event EventHandler<AccountEvent> Update
+        {
+            add { update += value; }
+            remove { update -= value; }
+        }
+    }
+    public class AccountEvent:EventArgs
+    {
+        private Account acc;
+        
+        public Account Acc
+        {
+            get
+            {
+                return acc;
+            }
+            set
+            {
+                acc = value;
+            }
+        }
+
+        public AccountEvent(Account acc)
+        {
+            this.Acc = acc;
         }
     }
 }

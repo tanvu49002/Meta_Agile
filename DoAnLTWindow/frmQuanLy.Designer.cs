@@ -101,6 +101,7 @@ namespace DoAnLTWindow
             đặtBànToolStripMenuItem.Name = "đặtBànToolStripMenuItem";
             đặtBànToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             đặtBànToolStripMenuItem.Text = "Đặt Bàn";
+            đặtBànToolStripMenuItem.Click += đặtBànToolStripMenuItem_Click;
             // 
             // panel2
             // 
@@ -219,6 +220,7 @@ namespace DoAnLTWindow
             btnThanhToan.TabIndex = 4;
             btnThanhToan.Text = "Thanh Toán";
             btnThanhToan.UseVisualStyleBackColor = false;
+            btnThanhToan.Click += btnThanhToan_Click;
             // 
             // flpTable
             // 
@@ -249,6 +251,7 @@ namespace DoAnLTWindow
             btnChange.TabIndex = 8;
             btnChange.Text = "Chuyển Bàn";
             btnChange.UseVisualStyleBackColor = false;
+            btnChange.Click += btnChange_Click;
             // 
             // frmQuanLy
             // 

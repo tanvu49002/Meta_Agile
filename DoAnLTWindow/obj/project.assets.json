@@ -497,11 +497,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\DoAnLTWindow.csproj",
+      "projectUniqueName": "D:\\Download\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
       "projectName": "DoAnLTWindow",
-      "projectPath": "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\DoAnLTWindow.csproj",
+      "projectPath": "D:\\Download\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Download\\ChangeStatusOfTable2\\DoAnLTWindow\\obj\\",
+      "outputPath": "D:\\Download\\BugOrderTableFixed\\DoAnLTWindow\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
