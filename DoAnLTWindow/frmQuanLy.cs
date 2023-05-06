@@ -256,15 +256,7 @@ namespace DoAnLTWindow
             }
             
         }
-        private void btnChange_Click(object sender, EventArgs e)
-        {
-            frmChangeTablecs f = new frmChangeTablecs();
-            f.ShowDialog();
-            this.Show();
-            loadTable();
-            loadCategory();
 
-        }
         private void đặtBànToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmOrder fr = new FrmOrder();

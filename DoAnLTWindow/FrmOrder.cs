@@ -37,23 +37,7 @@ namespace DoAnLTWindow
             }
             catch
             {
-                if (txtOrderName.Text == "" || txtNumber.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt bàn !");
-                }
-                else if (txtNumber.TextLength != 10)
-                {
-                    MessageBox.Show("Số điện thoại không hợp lệ !");
-                }
-                else if (nbudHour.Value > 23 || nbudHour.Value < 7)
-                {
-                    MessageBox.Show("Chỉ được đặt bàn trong thời gian hoạt động của nhà hàng ! (7:00 AM - 23:00 PM)");
-                }
-                else if (nbudMinute.Value > 59 || nbudMinute.Value < 0 || nbudHour.Value < DateTime.Now.Hour)
-                {
-                    MessageBox.Show("Thời gian không hợp lệ !");
-                }
-
+                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin!!");
             }
         }
 
@@ -64,7 +48,6 @@ namespace DoAnLTWindow
             txtOrderName.Text = "";
             nbudHour.Text = "0";
             nbudMinute.Text = "0";
-            dtOrderDate.MinDate = DateTime.Today.AddDays(0);
             if (pTable.Rows.Count > 0)
             {
                 DataRow row = pTable.Rows[0];
@@ -81,21 +64,10 @@ namespace DoAnLTWindow
                 }
             }
         }
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtOrderName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
-        }
-
-        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
         }
     }
 }

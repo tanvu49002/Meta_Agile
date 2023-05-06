@@ -119,7 +119,7 @@
             this.btnChange.TabIndex = 4;
             this.btnChange.Text = "Đổi Bàn";
             this.btnChange.UseVisualStyleBackColor = false;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+           
             // 
             // btnExit
             // 
@@ -131,7 +131,7 @@
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+       
             // 
             // frmChangeTablecs
             // 

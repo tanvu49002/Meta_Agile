@@ -251,7 +251,6 @@ namespace DoAnLTWindow
             btnChange.TabIndex = 8;
             btnChange.Text = "Chuyển Bàn";
             btnChange.UseVisualStyleBackColor = false;
-            btnChange.Click += btnChange_Click;
             // 
             // frmQuanLy
             // 
