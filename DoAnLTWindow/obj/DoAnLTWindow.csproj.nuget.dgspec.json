@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BugPaymentFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "D:\\BugPaymentFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BugPaymentFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "D:\\BugPaymentFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\BugPaymentFeatureFixed\\DoAnLTWindow\\obj\\",
+        "projectPath": "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "packagesPath": "C:\\Users\\tanda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tanda\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,8 +53,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -72,7 +65,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
