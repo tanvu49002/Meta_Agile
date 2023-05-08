@@ -40,6 +40,7 @@
             label4 = new System.Windows.Forms.Label();
             panel4 = new System.Windows.Forms.Panel();
             panel6 = new System.Windows.Forms.Panel();
+            txtAMPM = new System.Windows.Forms.TextBox();
             label7 = new System.Windows.Forms.Label();
             nbudMinute = new System.Windows.Forms.NumericUpDown();
             nbudHour = new System.Windows.Forms.NumericUpDown();
@@ -180,6 +181,7 @@
             // 
             panel6.BackColor = System.Drawing.Color.SandyBrown;
             panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            panel6.Controls.Add(txtAMPM);
             panel6.Controls.Add(label7);
             panel6.Controls.Add(nbudMinute);
             panel6.Controls.Add(nbudHour);
@@ -189,9 +191,18 @@
             panel6.Size = new System.Drawing.Size(326, 40);
             panel6.TabIndex = 4;
             // 
+            // txtAMPM
+            // 
+            txtAMPM.BackColor = System.Drawing.SystemColors.ScrollBar;
+            txtAMPM.Location = new System.Drawing.Point(285, 7);
+            txtAMPM.Name = "txtAMPM";
+            txtAMPM.ReadOnly = true;
+            txtAMPM.Size = new System.Drawing.Size(28, 22);
+            txtAMPM.TabIndex = 6;
+            // 
             // label7
             // 
-            label7.Location = new System.Drawing.Point(211, 9);
+            label7.Location = new System.Drawing.Point(162, 8);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(50, 22);
             label7.TabIndex = 5;
@@ -200,21 +211,21 @@
             // 
             // nbudMinute
             // 
-            nbudMinute.Location = new System.Drawing.Point(263, 8);
+            nbudMinute.Location = new System.Drawing.Point(218, 8);
             nbudMinute.Name = "nbudMinute";
             nbudMinute.Size = new System.Drawing.Size(50, 22);
             nbudMinute.TabIndex = 3;
             // 
             // nbudHour
             // 
-            nbudHour.Location = new System.Drawing.Point(160, 10);
+            nbudHour.Location = new System.Drawing.Point(106, 8);
             nbudHour.Name = "nbudHour";
             nbudHour.Size = new System.Drawing.Size(50, 22);
             nbudHour.TabIndex = 1;
             // 
             // label6
             // 
-            label6.Location = new System.Drawing.Point(106, 10);
+            label6.Location = new System.Drawing.Point(55, 8);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(50, 22);
             label6.TabIndex = 0;
@@ -270,6 +281,7 @@
             btnFind.TabIndex = 5;
             btnFind.Text = "Tìm";
             btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
             // btnCancel
             // 
@@ -280,7 +292,6 @@
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Huỷ";
             btnCancel.UseVisualStyleBackColor = false;
-            
             // 
             // comboBox2
             // 
@@ -336,6 +347,7 @@
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nbudMinute).EndInit();
             ((System.ComponentModel.ISupportInitialize)nbudHour).EndInit();
             panel5.ResumeLayout(false);
@@ -371,5 +383,6 @@
         private System.Windows.Forms.ComboBox cbbTableName;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.TextBox txtAMPM;
     }
 }

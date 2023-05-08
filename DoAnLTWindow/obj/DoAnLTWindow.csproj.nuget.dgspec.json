@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
-        "packagesPath": "C:\\Users\\tanda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tanda\\Downloads\\BugOrderTableFixed\\BugOrderTableFixed\\DoAnLTWindow\\obj\\",
+        "projectPath": "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "packagesPath": "C:\\Users\\HUONG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tanda\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\HUONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -65,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

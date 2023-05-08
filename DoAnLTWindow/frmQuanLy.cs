@@ -41,9 +41,9 @@ namespace DoAnLTWindow
             isSaved = false;
             isAddedFood = false;
             this.LoginAcc = acc;
-            
+
             loadTable();
-            
+
             loadCategory();
         }
         void typeAcc(string type)
@@ -56,7 +56,7 @@ namespace DoAnLTWindow
             }
             mnuTaiKhoan.Text += " (" + LoginAcc.Displayname + ")";
         }
-        
+
         void showBill(int id)
         {
             lvwBill.Items.Clear();
@@ -71,11 +71,9 @@ namespace DoAnLTWindow
                 TotalPrice += item.TotalPrice;
                 lvwBill.Items.Add(lvwItem);
             }
-            CultureInfo culture = new CultureInfo("vi-VN");
             txtTotalPrice.Text = TotalPrice.ToString();
-           
         }
-        
+
         void loadCategory()
         {
             List<Category> listCategory = CategoryDAO.Instance.getListCategory();
@@ -88,7 +86,7 @@ namespace DoAnLTWindow
             cboFood.DataSource = listFood;
             cboFood.DisplayMember = "NAME";
         }
-        
+
         public void loadTable()
         {
             flpTable.Controls.Clear();
@@ -138,46 +136,52 @@ namespace DoAnLTWindow
                 }
             }
         }
-        
+
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
+
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAccProfile f = new frmAccProfile(LoginAcc);
             f.Update += f_Update;
             f.ShowDialog();
         }
-        void f_Update (object sender, AccountEvent e)
+        void f_Update(object sender, AccountEvent e)
         {
             mnuTaiKhoan.Text = "Tài Khoản (" + e.Acc.Displayname + ")";
         }
         void btn_Click(object sender, EventArgs e)
         {
-           Button pButton = sender as Button;
-           if (oldButton != null)
-               oldButton.FlatStyle = FlatStyle.Standard;
-           oldButton = pButton;
-           pButton.FlatStyle = FlatStyle.Flat;
-           Table pData = pButton.Tag as Table;
-           int tableID = pData.ID;
-           if (pData.Status == "Đã Thanh Toán")
-               btnThanhToan.Text = "Hoàn Thành";
-           if (isAddedFood == true && curr_idTable != tableID && curr_idTable != -1 && isSaved == false)
-           {
-               int id_bill = BillDAO.Instance.getUncheckBill(curr_idTable);
-               DataProvider.Instance.ExecuteNonQuery("EXEC DELETE_BILL_UNSAVED " + id_bill);
-               isAddedFood = false;
-           }
-           isSaved = false;
-           isAddedFood = false;
-           curr_idTable = tableID;
-           lvwBill.Tag = (sender as Button).Tag;
-           showBill(tableID);
+            Button pButton = sender as Button;
+            if (oldButton != null)
+                oldButton.FlatStyle = FlatStyle.Standard;
+            oldButton = pButton;
+            pButton.FlatStyle = FlatStyle.Flat;
+            Table pData = pButton.Tag as Table;
+            int tableID = pData.ID;
+            if (pData.Status == "Đã Thanh Toán")
+            {
+                btnThanhToan.Text = "Hoàn Thành";
+            }
+            else
+            {
+                btnThanhToan.Text = "Thanh Toán";
+            }
+            if (isAddedFood == true && curr_idTable != tableID && curr_idTable != -1 && isSaved == false)
+            {
+                int id_bill = BillDAO.Instance.getUncheckBill(curr_idTable);
+                DataProvider.Instance.ExecuteNonQuery("EXEC DELETE_BILL_UNSAVED " + id_bill);
+                isAddedFood = false;
+            }
+            isSaved = false;
+            isAddedFood = false;
+            curr_idTable = tableID;
+            lvwBill.Tag = (sender as Button).Tag;
+            showBill(tableID);
         }
-       
+
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = 0;
@@ -190,14 +194,19 @@ namespace DoAnLTWindow
             id = selected.ID;
             loadFoodByCategory(id);
         }
-        
+
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             Table table = lvwBill.Tag as Table;
             oldButton.Tag = table;
             if (table == null)
             {
-                MessageBox.Show("Hãy chọn bàn trước khi thêm");
+                MessageBox.Show("Vui lòng chọn bàn trước khi thao tác !");
+                return;
+            }
+            else if (table.Status == "Đã Thanh Toán")
+            {
+                MessageBox.Show("Bàn chưa sẵn sàng !");
                 return;
             }
             int idbill = BillDAO.Instance.getUncheckBill(table.ID);
@@ -226,22 +235,34 @@ namespace DoAnLTWindow
                 return;
             }
             Table table = lvwBill.Tag as Table;
-            int idbill = BillDAO.Instance.getUncheckBill(table.ID);
-            double totalPrice = Convert.ToDouble(txtTotalPrice.Text);
             if (table.Status == "Trống")
             {
                 MessageBox.Show("Bàn trống hoặc chưa được lưu !");
             }
-            else if (idbill != -1)
+            else if (btnThanhToan.Text == "Thanh Toán")
             {
                 if (MessageBox.Show("Bạn có muốn thanh toán cho " + table.Name + "?", "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
                     return;
-                BillDAO.Instance.checkOut(idbill, (float)totalPrice);
+                }
+                else
+                {
+                    frmcustomerMoney fMoney = new frmcustomerMoney(curr_idTable, LoginAcc, double.Parse(txtTotalPrice.Text));
+                    fMoney.ShowDialog();
+                    showBill(table.ID);
+                    loadTable();
+                }
+            }
+            if (table.Status == "Đã Thanh Toán")
+            {
+                MessageBox.Show("Đã hoàn tất thanh toán cho " + table.Name);
+                btnThanhToan.Text = "Thanh Toán";
                 DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI = N'Trống' WHERE ID =" + table.ID);
-                showBill(table.ID);
                 loadTable();
+                showBill(table.ID);
                 return;
             }
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -254,9 +275,17 @@ namespace DoAnLTWindow
                 DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI = N'Có Người' WHERE ID = " + curr_idTable);
                 loadTable();
             }
-            
-        }
 
+        }
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            frmChangeTablecs f = new frmChangeTablecs();
+            f.ShowDialog();
+            this.Show();
+            loadTable();
+            loadCategory();
+
+        }
         private void đặtBànToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmOrder fr = new FrmOrder();

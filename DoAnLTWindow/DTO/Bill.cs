@@ -15,6 +15,7 @@ namespace DoAnLTWindow.DTO
             DateCheckIn = datecheckin;
             DateCheckOut = datecheckout;
             Status = status;
+            
         }
         public Bill(DataRow row)
         {
@@ -27,16 +28,17 @@ namespace DoAnLTWindow.DTO
             }
             
             Status = (int)row["STATUS"];
-
+            
         }
         private int status;
         private DateTime? dateCheckOut;
         private DateTime? dateCheckIn;
         private int iD;
-
+        
         public int ID { get => iD; set => iD = value; }
         public DateTime? DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
         public DateTime? DateCheckOut { get => dateCheckOut; set => dateCheckOut = value; }
         public int Status { get => status; set => status = value; }
+       
     }
 }

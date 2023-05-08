@@ -83,16 +83,14 @@ namespace DoAnLTWindow
             // mnuThongTinTaiKhoan
             // 
             mnuThongTinTaiKhoan.Name = "mnuThongTinTaiKhoan";
-            mnuThongTinTaiKhoan.Size = new System.Drawing.Size(180, 22);
+            mnuThongTinTaiKhoan.Size = new System.Drawing.Size(170, 22);
             mnuThongTinTaiKhoan.Text = "Thông Tin";
             mnuThongTinTaiKhoan.Click += thôngTinCáNhânToolStripMenuItem_Click;
-            
-
             // 
             // mnuDangXuat
             // 
             mnuDangXuat.Name = "mnuDangXuat";
-            mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            mnuDangXuat.Size = new System.Drawing.Size(170, 22);
             mnuDangXuat.Text = "Đăng Xuất / Thoát";
             mnuDangXuat.Click += đăngXuấtToolStripMenuItem_Click;
             // 
@@ -168,10 +166,7 @@ namespace DoAnLTWindow
             cboCategory.Name = "cboCategory";
             cboCategory.Size = new System.Drawing.Size(129, 23);
             cboCategory.TabIndex = 0;
-            
             cboCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
-           
-
             // 
             // cboFood
             // 
@@ -251,6 +246,7 @@ namespace DoAnLTWindow
             btnChange.TabIndex = 8;
             btnChange.Text = "Chuyển Bàn";
             btnChange.UseVisualStyleBackColor = false;
+            btnChange.Click += btnChange_Click;
             // 
             // frmQuanLy
             // 

@@ -28,7 +28,7 @@ namespace DoAnLTWindow.DAO
         }
         private BillDAO() { }
         //form QuanLy
-        public int getUncheckBill(int id = -1)
+        public int getUncheckBill(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM BILL WHERE ID_TABLE = " + id + "  AND STATUS = 0");
             if (data.Rows.Count > 0)

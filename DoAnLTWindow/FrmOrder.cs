@@ -30,31 +30,35 @@ namespace DoAnLTWindow
         {
             int id = (int)DataProvider.Instance.ExecuteScalar("SELECT ID FROM BAN_AN WHERE TEN = N'" + cbbTableName.Text + "'");
             string order_time = dtOrderDate.Text + " " + nbudHour.Value + ":" + nbudMinute.Value;
-            try
+            if (txtOrderName.Text == "" || txtNumber.Text == "")
             {
-                DataProvider.Instance.ExecuteNonQuery(String.Format("EXEC INSERT_ORDERED {0}, N'{1}', '{2}', '{3}'", id, txtOrderName.Text, txtNumber.Text, order_time));
-                MessageBox.Show("Đặt Bàn Thành Công");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt bàn !");
             }
-            catch
+            else if (txtNumber.TextLength != 10)
             {
-                if (txtOrderName.Text == "" || txtNumber.Text == "")
+                MessageBox.Show("Số điện thoại không hợp lệ !");
+            }
+            else if (nbudHour.Value > 23 || nbudHour.Value < 7)
+            {
+                MessageBox.Show("Chỉ được đặt bàn trong thời gian hoạt động của nhà hàng ! (7:00 AM - 23:00 PM)");
+            }
+            else if (nbudMinute.Value > 59 || nbudMinute.Value < 0)
+            {
+                MessageBox.Show("Thời gian không hợp lệ !");
+            }
+            else
+            {
+                try
                 {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt bàn !");
+                    DataProvider.Instance.ExecuteNonQuery(String.Format("EXEC INSERT_ORDERED {0}, N'{1}', '{2}', '{3}'", id, txtOrderName.Text, txtNumber.Text, order_time));
+                    MessageBox.Show("Đặt bàn thành công !");
                 }
-                else if (txtNumber.TextLength != 10)
-                {
-                    MessageBox.Show("Số điện thoại không hợp lệ !");
-                }
-                else if (nbudHour.Value > 23 || nbudHour.Value < 7)
-                {
-                    MessageBox.Show("Chỉ được đặt bàn trong thời gian hoạt động của nhà hàng ! (7:00 AM - 23:00 PM)");
-                }
-                else if (nbudMinute.Value > 59 || nbudMinute.Value < 0 || nbudHour.Value < DateTime.Now.Hour)
+                catch
                 {
                     MessageBox.Show("Thời gian không hợp lệ !");
                 }
-
             }
+
         }
 
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,11 +83,41 @@ namespace DoAnLTWindow
                     nbudHour.Text = test0[0];
                     nbudMinute.Text = test0[1];
                 }
+                else
+                {
+                    txtAMPM.Text = "";
+                }
             }
         }
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (txtNumber.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin để tìm kiếm !");
+            }
+            else
+            {
+                DateTime datetime = DateTime.Now;
+                DataTable pTable = DataProvider.Instance.ExecuteQuery("SELECT * FROM ORDERED_TABLE WHERE Number = '" + txtNumber.Text + "' AND ORDER_TIME >= '" + datetime.ToString("yyyy-MM-dd HH:mm:ss") + "' ORDER BY ORDER_TIME ASC");
+                if (pTable.Rows.Count > 0)
+                {
+                    DataRow row = pTable.Rows[0];
+                    string TableName = DataProvider.Instance.ExecuteScalar("SELECT TEN FROM BAN_AN WHERE ID = " + row["TABLE_ID"].ToString()).ToString();
+                    cbbTableName.Text = TableName;
+                    txtNumber.Text = row["Number"].ToString();
+                    txtOrderName.Text = row["ORDERS_NAME"].ToString();
+                    string[] test0 = row["ORDER_TIME"].ToString().Split(' ');
+                    txtAMPM.Text = test0[2];
+                    dtOrderDate.Text = test0[0];
+                    test0 = test0[1].Split(':');
+                    nbudHour.Text = test0[0];
+                    nbudMinute.Text = test0[1];
+                }
+            }
         }
 
         private void txtOrderName_KeyPress(object sender, KeyPressEventArgs e)
