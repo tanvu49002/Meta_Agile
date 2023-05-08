@@ -55,5 +55,27 @@ namespace DoAnLTWindow.DAO
             }
             return tableList;
         }
+        public int getStatus2(string name)
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT TRANGTHAI2 FROM BAN_AN WHERE TEN = '" + name + "'");
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+        public int getStatus2ByID(int id)
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT TRANGTHAI2 FROM BAN_AN WHERE ID = '" + id + "'");
+            }
+            catch
+            {
+                return -1;
+            }
+        }
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\BugCancelBookingTableFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\BugCancelBookingTableFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\BugCancelBookingTableFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\DoAnLTWindow.csproj",
-        "packagesPath": "C:\\Users\\HUONG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HUONG\\Source\\Repos\\Meta_Agile\\DoAnLTWindow\\obj\\",
+        "projectPath": "D:\\Download\\BugCancelBookingTableFeatureFixed\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Download\\BugCancelBookingTableFeatureFixed\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HUONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

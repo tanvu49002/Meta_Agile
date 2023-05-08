@@ -63,6 +63,7 @@ namespace DoAnLTWindow
 
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             DataTable pTable = DataProvider.Instance.ExecuteQuery("SELECT * FROM BAN_AN WHERE TEN = N'" + cbbTableName.Text + "'");
             txtNumber.Text = "";
             txtOrderName.Text = "";
@@ -78,6 +79,7 @@ namespace DoAnLTWindow
                     txtNumber.Text = row["Number"].ToString();
                     txtOrderName.Text = row["ORDERS_NAME"].ToString();
                     string[] test0 = row["ORDER_TIME"].ToString().Split(' ');
+                    txtAMPM.Text = test0[2];
                     dtOrderDate.Text = test0[0];
                     test0 = test0[1].Split(':');
                     nbudHour.Text = test0[0];
@@ -101,25 +103,52 @@ namespace DoAnLTWindow
             }
             else
             {
+
                 DateTime datetime = DateTime.Now;
                 DataTable pTable = DataProvider.Instance.ExecuteQuery("SELECT * FROM ORDERED_TABLE WHERE Number = '" + txtNumber.Text + "' AND ORDER_TIME >= '" + datetime.ToString("yyyy-MM-dd HH:mm:ss") + "' ORDER BY ORDER_TIME ASC");
                 if (pTable.Rows.Count > 0)
                 {
                     DataRow row = pTable.Rows[0];
-                    string TableName = DataProvider.Instance.ExecuteScalar("SELECT TEN FROM BAN_AN WHERE ID = " + row["TABLE_ID"].ToString()).ToString();
-                    cbbTableName.Text = TableName;
-                    txtNumber.Text = row["Number"].ToString();
-                    txtOrderName.Text = row["ORDERS_NAME"].ToString();
-                    string[] test0 = row["ORDER_TIME"].ToString().Split(' ');
-                    txtAMPM.Text = test0[2];
-                    dtOrderDate.Text = test0[0];
-                    test0 = test0[1].Split(':');
-                    nbudHour.Text = test0[0];
-                    nbudMinute.Text = test0[1];
+                    int status2 = TableDAO.Instance.getStatus2ByID((int)row["TABLE_ID"]);
+                    if (status2 == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy bàn được đặt");
+                    }
+                    else
+                    {
+                        string TableName = DataProvider.Instance.ExecuteScalar("SELECT TEN FROM BAN_AN WHERE ID = " + row["TABLE_ID"].ToString()).ToString();
+                        cbbTableName.Text = TableName;
+                        txtNumber.Text = row["Number"].ToString();
+                        txtOrderName.Text = row["ORDERS_NAME"].ToString();
+                        string[] test0 = row["ORDER_TIME"].ToString().Split(' ');
+                        txtAMPM.Text = test0[2];
+                        dtOrderDate.Text = test0[0];
+                        test0 = test0[1].Split(':');
+                        nbudHour.Text = test0[0];
+                        nbudMinute.Text = test0[1];
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng số điện thoại đã đặt bàn !");
                 }
             }
         }
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            int status2 = TableDAO.Instance.getStatus2(cbbTableName.Text);
+            if (status2 == 0)
+            {
+                MessageBox.Show("Bàn chưa được đặt !");
+            }
+            else
+            {
+                DataProvider.Instance.ExecuteNonQuery("UPDATE BAN_AN SET TRANGTHAI2 = 0 WHERE TEN = N'" + cbbTableName.Text + "'");
+                string order_time = dtOrderDate.Text + " " + nbudHour.Value + ":" + nbudMinute.Value;
+                DataProvider.Instance.ExecuteNonQuery("DELETE FROM ORDERED_TABLE WHERE Number = '" + txtNumber.Text + "' AND ORDER_TIME = '" + order_time + "'");
+                MessageBox.Show("Đã Huỷ Bàn Thành Công");
+            }
+        }
         private void txtOrderName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))

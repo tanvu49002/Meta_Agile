@@ -229,17 +229,19 @@ namespace DoAnLTWindow
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            Table table = lvwBill.Tag as Table;
+            int uncheckBill = BillDAO.Instance.getUncheckBill(table.ID);
             if (curr_idTable == -1)
             {
                 MessageBox.Show("Vui lòng chọn bàn trước khi thao tác !");
                 return;
             }
-            Table table = lvwBill.Tag as Table;
             if (table.Status == "Trống")
             {
                 MessageBox.Show("Bàn trống hoặc chưa được lưu !");
             }
-            else if (btnThanhToan.Text == "Thanh Toán")
+            
+            else if (btnThanhToan.Text == "Thanh Toán" && uncheckBill != -1)
             {
                 if (MessageBox.Show("Bạn có muốn thanh toán cho " + table.Name + "?", "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.No)
                 {

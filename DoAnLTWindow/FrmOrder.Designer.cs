@@ -292,6 +292,7 @@
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Huỷ";
             btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // comboBox2
             // 
