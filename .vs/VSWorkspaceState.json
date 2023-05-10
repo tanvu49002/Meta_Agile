@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DoAnLTWindow",
+    "\\PTTK"
   ],
-  "SelectedNode": "\\DoAnLTWindow.sln",
+  "SelectedNode": "\\DoAnLTWindow\\DoAnLTWindow.csproj",
   "PreviewInSolutionExplorer": false
 }

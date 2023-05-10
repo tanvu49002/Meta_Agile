@@ -23,16 +23,21 @@ namespace DoAnLTWindow
             InitializeComponent();
             //load data
             loadPaidBills();
-
+            loadListFood();
 
         }
         #region Food
-        
-       
+        void loadListFood()
+        {
+            List<Food> pList = FoodDAO.Instance.showFood();
+            dtgvFood.DataSource = pList;
+            dtgvFood.Columns["IdCategory"].Visible = false;
+        }
+
         #endregion
         #region Account
-       
-        #endregion        
+
+        #endregion
         #region Bill
         private void btnViewBill_Click(object sender, System.EventArgs e)
         {
