@@ -296,5 +296,13 @@ namespace DoAnLTWindow
             this.Show();
             loadTable();
         }
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdmin f = new frmAdmin(this);
+            f.LoginAccount = LoginAcc;
+            f.ShowDialog();
+        }
+        
     }
 }

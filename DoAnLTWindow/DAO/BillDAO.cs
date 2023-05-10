@@ -62,5 +62,9 @@ namespace DoAnLTWindow.DAO
         {
             return DataProvider.Instance.ExecuteQuery("EXEC GETLISTBILLBYDATE @checkin , @checkout", new object[] { checkin, checkout });
         }
+        public DataTable loadPaidBills()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT BAN_AN.TEN AS [Bàn], BILL.TOTALPRICE AS [Tổng đơn], DATECHECKIN AS [Ngày lên đơn], DATECHECKOUT AS [Ngày thanh toán] FROM BILL, BAN_AN WHERE BILL.STATUS = 1 AND BAN_AN.ID = BILL.ID_TABLE");
+        }
     }
 }

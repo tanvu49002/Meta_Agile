@@ -72,6 +72,7 @@ namespace DoAnLTWindow
             mnuAdmin.Name = "mnuAdmin";
             mnuAdmin.Size = new System.Drawing.Size(55, 20);
             mnuAdmin.Text = "Admin";
+            mnuAdmin.Click += adminToolStripMenuItem_Click;
             // 
             // mnuTaiKhoan
             // 
