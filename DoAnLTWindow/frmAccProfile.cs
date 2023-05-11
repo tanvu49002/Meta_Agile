@@ -30,13 +30,14 @@ namespace DoAnLTWindow
         }
         public frmAccProfile(Account acc)
         {
+           
             InitializeComponent();
             LoginAcc = acc;
         }
         void typeAcc(Account acc)
         {
-            txtUsername.Text = LoginAcc.Username;
-            txtDisplayName.Text = LoginAcc.Displayname;
+            txtUsername.Text = acc.Username;
+            txtDisplayName.Text = acc.Displayname;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -65,6 +66,7 @@ namespace DoAnLTWindow
                 if (AccDAO.Instance.updateAccountInfo(username, displayname, pass, newpass))
                 {
                     MessageBox.Show("Cập nhật thành công !");
+                    LoginAcc.Displayname = txtDisplayName.Text;
                     if (update != null)
                     {
                         update(this, new AccountEvent(AccDAO.Instance.getAccByUsername(username)));
@@ -80,6 +82,7 @@ namespace DoAnLTWindow
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             updateAccount();
+
         }
 
         private event EventHandler<AccountEvent> update;

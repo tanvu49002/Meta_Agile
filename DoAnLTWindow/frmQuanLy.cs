@@ -302,6 +302,7 @@ namespace DoAnLTWindow
             frmAdmin f = new frmAdmin(this);
             f.LoginAccount = LoginAcc;
             f.ShowDialog();
+            this.Show();
         }
         
     }

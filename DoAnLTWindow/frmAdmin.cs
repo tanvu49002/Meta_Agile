@@ -24,6 +24,7 @@ namespace DoAnLTWindow
             //load data
             loadPaidBills();
             loadListFood();
+            loadAcc();
 
         }
         #region Food
@@ -36,7 +37,10 @@ namespace DoAnLTWindow
 
         #endregion
         #region Account
-
+        void loadAcc()
+        {
+            dtgvAccount.DataSource = AccDAO.Instance.getListAcc();
+        }
         #endregion
         #region Bill
         private void btnViewBill_Click(object sender, System.EventArgs e)

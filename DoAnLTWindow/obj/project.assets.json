@@ -492,19 +492,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tanda\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tanda\\Downloads\\DisplayListOfFoods(Admin)\\DisplayListOfFoods(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+      "projectUniqueName": "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
       "projectName": "DoAnLTWindow",
-      "projectPath": "C:\\Users\\tanda\\Downloads\\DisplayListOfFoods(Admin)\\DisplayListOfFoods(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
-      "packagesPath": "C:\\Users\\tanda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tanda\\Downloads\\DisplayListOfFoods(Admin)\\DisplayListOfFoods(Admin)\\DoAnLTWindow\\obj\\",
+      "projectPath": "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tanda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -558,7 +558,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
