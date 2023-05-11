@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\StatisticsOfPaidBillsFeature\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\StatisticsOfPaidBillsFeature\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\StatisticsOfPaidBillsFeature\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectPath": "D:\\Download\\StatisticsOfPaidBillsFeature\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Download\\DisplayListOfAccounts(Admin)\\DoAnLTWindow\\obj\\",
+        "outputPath": "D:\\Download\\StatisticsOfPaidBillsFeature\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

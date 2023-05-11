@@ -22,7 +22,8 @@ namespace DoAnLTWindow
             pQL = QL;
             InitializeComponent();
             //load data
-            loadPaidBills();
+            loadDateTimePickerBill();
+            loadBillList(dtpFromDate.Value, dtpToDate.Value);
             loadListFood();
             loadAcc();
 

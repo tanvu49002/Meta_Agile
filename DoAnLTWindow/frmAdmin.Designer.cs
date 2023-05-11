@@ -617,7 +617,7 @@ namespace DoAnLTWindow
             this.btnViewBill.TabIndex = 1;
             this.btnViewBill.Text = "Thống Kê";
             this.btnViewBill.UseVisualStyleBackColor = false;
-          
+            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
             // dtpFromDate
             // 
