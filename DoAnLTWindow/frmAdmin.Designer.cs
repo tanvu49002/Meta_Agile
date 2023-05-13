@@ -495,7 +495,7 @@ namespace DoAnLTWindow
             this.txtFoodID.ReadOnly = true;
             this.txtFoodID.Size = new System.Drawing.Size(191, 21);
             this.txtFoodID.TabIndex = 1;
-        
+            this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
             // label1
             // 
