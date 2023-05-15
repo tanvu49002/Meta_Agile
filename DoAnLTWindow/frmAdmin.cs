@@ -169,6 +169,35 @@ namespace DoAnLTWindow
                 updateFood -= value;
             }
         }
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtFoodID.Text);
+            if (FoodDAO.Instance.deleteFood(id))
+            {
+                MessageBox.Show("Đã xóa món ăn");
+                loadListFood();
+                if (deleteFood != null)
+                {
+                    deleteFood(this, new EventArgs());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+            }
+        }
+        private event EventHandler deleteFood;
+        public event EventHandler DeleteFood
+        {
+            add
+            {
+                deleteFood += value;
+            }
+            remove
+            {
+                deleteFood -= value;
+            }
+        }
         #endregion
         #region Account
         void loadAcc()

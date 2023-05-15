@@ -303,6 +303,7 @@ namespace DoAnLTWindow
             f.LoginAccount = LoginAcc;
             f.InsertFood += f_InsertFood;
             f.UpdateFood += f_UpdateFood;
+            f.DeleteFood += f_DeleteFood;
             f.ShowDialog();
             this.Show();
         }
@@ -321,6 +322,15 @@ namespace DoAnLTWindow
             {
                 showBill((lvwBill.Tag as Table).ID);
             }
+        }
+        void f_DeleteFood(object sender, EventArgs e)
+        {
+            loadFoodByCategory((cboCategory.SelectedItem as Category).ID);
+            if (lvwBill.Tag != null)
+            {
+                showBill((lvwBill.Tag as Table).ID);
+            }
+            loadTable();
         }
     }
 }
