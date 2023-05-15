@@ -359,7 +359,7 @@ namespace DoAnLTWindow
             this.btnEditFood.TabIndex = 2;
             this.btnEditFood.Text = "Sửa món";
             this.btnEditFood.UseVisualStyleBackColor = false;
-          
+            this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
             // btnDeleteFood
             // 
@@ -370,7 +370,7 @@ namespace DoAnLTWindow
             this.btnDeleteFood.TabIndex = 1;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = false;
-        
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnAddFood
             // 
@@ -381,7 +381,7 @@ namespace DoAnLTWindow
             this.btnAddFood.TabIndex = 0;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = false;
-           
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // panel5
             // 

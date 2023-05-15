@@ -198,7 +198,6 @@ namespace DoAnLTWindow
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             Table table = lvwBill.Tag as Table;
-            oldButton.Tag = table;
             if (table == null)
             {
                 MessageBox.Show("Vui lòng chọn bàn trước khi thao tác !");
@@ -209,6 +208,7 @@ namespace DoAnLTWindow
                 MessageBox.Show("Bàn chưa sẵn sàng !");
                 return;
             }
+            oldButton.Tag = table;
             int idbill = BillDAO.Instance.getUncheckBill(table.ID);
             int idfood = (cboFood.SelectedItem as Food).ID;
             int count = (int)updFoodCount.Value;
@@ -301,9 +301,36 @@ namespace DoAnLTWindow
             this.Hide();
             frmAdmin f = new frmAdmin(this);
             f.LoginAccount = LoginAcc;
+            f.InsertFood += f_InsertFood;
+            f.UpdateFood += f_UpdateFood;
+            f.DeleteFood += f_DeleteFood;
             f.ShowDialog();
             this.Show();
         }
-        
+        void f_InsertFood(object sender, EventArgs e)
+        {
+            loadFoodByCategory((cboCategory.SelectedItem as Category).ID);
+            if (lvwBill.Tag != null)
+            {
+                showBill((lvwBill.Tag as Table).ID);
+            }
+        }
+        void f_UpdateFood(object sender, EventArgs e)
+        {
+            loadFoodByCategory((cboCategory.SelectedItem as Category).ID);
+            if (lvwBill.Tag != null)
+            {
+                showBill((lvwBill.Tag as Table).ID);
+            }
+        }
+        void f_DeleteFood(object sender, EventArgs e)
+        {
+            loadFoodByCategory((cboCategory.SelectedItem as Category).ID);
+            if (lvwBill.Tag != null)
+            {
+                showBill((lvwBill.Tag as Table).ID);
+            }
+            loadTable();
+        }
     }
 }
