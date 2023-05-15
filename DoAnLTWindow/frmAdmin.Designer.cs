@@ -348,7 +348,7 @@ namespace DoAnLTWindow
             this.btnShowFood.TabIndex = 3;
             this.btnShowFood.Text = "Xem danh sách món";
             this.btnShowFood.UseVisualStyleBackColor = false;
-          
+            this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
             // 
             // btnEditFood
             // 
@@ -555,7 +555,7 @@ namespace DoAnLTWindow
             this.btnSearchFood.TabIndex = 4;
             this.btnSearchFood.Text = "Tìm";
             this.btnSearchFood.UseVisualStyleBackColor = false;
-          
+            this.btnSearchFood.Click += new System.EventHandler(this.btnSearghFood_Click);
             // 
             // tabBill
             // 

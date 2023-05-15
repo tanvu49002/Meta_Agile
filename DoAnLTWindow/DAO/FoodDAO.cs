@@ -72,7 +72,7 @@ namespace DoAnLTWindow.DAO
         public List<Food> searchFoodByName(string name)
         {
             List<Food> list = new List<Food>();
-            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM FOOD WHERE NAME LIKE N'%{0}%'", name));
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM FOOD WHERE dbo.fuConvertToUnsign1(NAME) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name));
             foreach (DataRow item in data.Rows)
             {
                 Food food = new Food(item);

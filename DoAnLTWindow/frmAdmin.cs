@@ -15,12 +15,18 @@ namespace DoAnLTWindow
 {
     public partial class frmAdmin : Form
     {
+        BindingSource FoodList = new BindingSource();
+        BindingSource AccountList = new BindingSource();
         public Account LoginAccount;
         frmQuanLy pQL;
         public frmAdmin(frmQuanLy QL)
         {
+            
             pQL = QL;
             InitializeComponent();
+            dtgvAccount.DataSource = AccountList;
+            dtgvFood.DataSource = FoodList;
+            
             //load data
             loadDateTimePickerBill();
             loadBillList(dtpFromDate.Value, dtpToDate.Value);
@@ -30,14 +36,11 @@ namespace DoAnLTWindow
             loadFoodCategoryToComboBox(cboFoodCategory);
             addFoodBinding();
             addAccBinding();
-
         }
         #region Food
         void loadListFood()
         {
-            List<Food> pList = FoodDAO.Instance.showFood();
-            dtgvFood.DataSource = pList;
-            dtgvFood.Columns["IdCategory"].Visible = false;
+            FoodList.DataSource = FoodDAO.Instance.showFood();
         }
         void addFoodBinding()
         {
@@ -79,12 +82,29 @@ namespace DoAnLTWindow
                 return;
             }
         }
+        List<Food> searchFood(string name)
+        {
+            List<Food> listFood = FoodDAO.Instance.searchFoodByName(name);
+            return listFood;
+        }
+        private void btnSearghFood_Click(object sender, EventArgs e)
+        {
+            List<Food> pData = searchFood(txtSearchFoodName.Text);
+            if (pData.Count > 0)
+                FoodList.DataSource = pData;
+            else
+                MessageBox.Show("Không Tìm Thấy Món!");
 
+        }
+        private void btnShowFood_Click(object sender, EventArgs e)
+        {
+            loadListFood();
+        }
         #endregion
         #region Account
         void loadAcc()
         {
-            dtgvAccount.DataSource = AccDAO.Instance.getListAcc();
+            AccountList.DataSource = AccDAO.Instance.getListAcc();
         }
         void addAccBinding()
         {
