@@ -102,36 +102,27 @@ namespace DoAnLTWindow
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-            if (txtFoodName.Text == "")
+            string name = txtFoodName.Text;
+            int categoryID = (cboFoodCategory.SelectedItem as Category).ID;
+            float price = (float)updFoodPrice.Value;
+            int tmp = FoodDAO.Instance.insertFood(name, categoryID, price);
+            if (tmp == 1)
             {
-                MessageBox.Show("Tên món ăn không được để trống !");
-                return;
+                MessageBox.Show("Đã thêm món ăn");
+                loadListFood();
+                if (insertFood != null)
+                {
+                    insertFood(this, new EventArgs());
+                }
+            }
+            else if (tmp == 0)
+            {
+                MessageBox.Show("Món Ăn Đã Tồn Tại !");
             }
             else
             {
-                string name = txtFoodName.Text;
-                int categoryID = (cboFoodCategory.SelectedItem as Category).ID;
-                float price = (float)updFoodPrice.Value;
-                int tmp = FoodDAO.Instance.insertFood(name, categoryID, price);
-                if (tmp == 1)
-                {
-                    MessageBox.Show("Đã thêm món ăn");
-                    loadListFood();
-                    if (insertFood != null)
-                    {
-                        insertFood(this, new EventArgs());
-                    }
-                }
-                else if (tmp == 0)
-                {
-                    MessageBox.Show("Món Ăn Đã Tồn Tại !");
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi ! Vui lòng thử lại");
-                }
+                MessageBox.Show("Lỗi ! Vui lòng thử lại");
             }
-            
 
         }
         private event EventHandler insertFood;
@@ -176,35 +167,6 @@ namespace DoAnLTWindow
             remove
             {
                 updateFood -= value;
-            }
-        }
-        private void btnDeleteFood_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(txtFoodID.Text);
-            if (FoodDAO.Instance.deleteFood(id))
-            {
-                MessageBox.Show("Đã xóa món ăn");
-                loadListFood();
-                if (deleteFood != null)
-                {
-                    deleteFood(this, new EventArgs());
-                }
-            }
-            else
-            {
-                MessageBox.Show("Lỗi ! Vui lòng thử lại");
-            }
-        }
-        private event EventHandler deleteFood;
-        public event EventHandler DeleteFood
-        {
-            add
-            {
-                deleteFood += value;
-            }
-            remove
-            {
-                deleteFood -= value;
             }
         }
         #endregion
