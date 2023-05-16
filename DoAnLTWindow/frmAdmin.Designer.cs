@@ -279,7 +279,7 @@ namespace DoAnLTWindow
             this.btnResetPass.TabIndex = 4;
             this.btnResetPass.Text = "Đặt Lại Mật Khẩu";
             this.btnResetPass.UseVisualStyleBackColor = false;
-           
+            
             // 
             // btnEditAccount
             // 
@@ -290,7 +290,7 @@ namespace DoAnLTWindow
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = false;
-           
+            
             // 
             // btnDeleteAccount
             // 
@@ -312,7 +312,7 @@ namespace DoAnLTWindow
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm tài khoản";
             this.btnAddAccount.UseVisualStyleBackColor = false;
-          
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // tabFood
             // 

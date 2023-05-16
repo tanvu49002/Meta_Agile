@@ -10,6 +10,7 @@ using DoAnLTWindow.DAO;
 using System;
 using DoAnLTWindow.DTO;
 using System.Drawing;
+using System.Security.Cryptography;
 
 namespace DoAnLTWindow
 {
@@ -36,6 +37,9 @@ namespace DoAnLTWindow
             loadFoodCategoryToComboBox(cboFoodCategory);
             addFoodBinding();
             addAccBinding();
+            //cbb account type
+            updAccType.Items.Add("ADMIN");
+            updAccType.Items.Add("STAFF");
         }
         #region Food
         void loadListFood()
@@ -102,28 +106,35 @@ namespace DoAnLTWindow
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-            string name = txtFoodName.Text;
-            int categoryID = (cboFoodCategory.SelectedItem as Category).ID;
-            float price = (float)updFoodPrice.Value;
-            int tmp = FoodDAO.Instance.insertFood(name, categoryID, price);
-            if (tmp == 1)
+            if (txtFoodName.Text == "")
             {
-                MessageBox.Show("Đã thêm món ăn");
-                loadListFood();
-                if (insertFood != null)
-                {
-                    insertFood(this, new EventArgs());
-                }
-            }
-            else if (tmp == 0)
-            {
-                MessageBox.Show("Món Ăn Đã Tồn Tại !");
+                MessageBox.Show("Tên món ăn không được để trống !");
+                return;
             }
             else
             {
-                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+                string name = txtFoodName.Text;
+                int categoryID = (cboFoodCategory.SelectedItem as Category).ID;
+                float price = (float)updFoodPrice.Value;
+                int tmp = FoodDAO.Instance.insertFood(name, categoryID, price);
+                if (tmp == 1)
+                {
+                    MessageBox.Show("Đã thêm món ăn");
+                    loadListFood();
+                    if (insertFood != null)
+                    {
+                        insertFood(this, new EventArgs());
+                    }
+                }
+                else if (tmp == 0)
+                {
+                    MessageBox.Show("Món Ăn Đã Tồn Tại !");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi ! Vui lòng thử lại");
+                }
             }
-
         }
         private event EventHandler insertFood;
         public event EventHandler InsertFood
@@ -139,22 +150,30 @@ namespace DoAnLTWindow
         }
         private void btnEditFood_Click(object sender, EventArgs e)
         {
-            string name = txtFoodName.Text;
-            int categoryID = (cboFoodCategory.SelectedItem as Category).ID;
-            float price = (float)updFoodPrice.Value;
-            int id = Convert.ToInt32(txtFoodID.Text);
-            if (FoodDAO.Instance.updateFood(id, name, categoryID, price))
+            if (txtFoodName.Text == "")
             {
-                MessageBox.Show("Đã sửa món ăn");
-                loadListFood();
-                if (updateFood != null)
-                {
-                    updateFood(this, new EventArgs());
-                }
+                MessageBox.Show("Tên món ăn không được để trống !");
+                return;
             }
             else
             {
-                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+                string name = txtFoodName.Text;
+                int categoryID = (cboFoodCategory.SelectedItem as Category).ID;
+                float price = (float)updFoodPrice.Value;
+                int id = Convert.ToInt32(txtFoodID.Text);
+                if (FoodDAO.Instance.updateFood(id, name, categoryID, price))
+                {
+                    MessageBox.Show("Đã sửa món ăn");
+                    loadListFood();
+                    if (updateFood != null)
+                    {
+                        updateFood(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi ! Vui lòng thử lại");
+                }
             }
         }
         private event EventHandler updateFood;
@@ -209,6 +228,46 @@ namespace DoAnLTWindow
             txtUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "USERNAME", true, DataSourceUpdateMode.Never));
             txtDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DISPLAYNAME", true, DataSourceUpdateMode.Never));
             updAccType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "TYPE", true, DataSourceUpdateMode.Never));
+        }
+        void addAcc(string username, string displayname, int type)
+        {
+            if (AccDAO.Instance.insertAcc(username, displayname, type))
+            {
+                MessageBox.Show("Thêm thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+            }
+            loadAcc();
+
+        }
+        private void btnShowAccount_Click(object sender, EventArgs e)
+        {
+            loadAcc();
+        }
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            string displayname = txtDisplayName.Text;
+            int type = updAccType.Text == "ADMIN" ? 1 : 0;
+            int checkUsername = (int)DataProvider.Instance.ExecuteScalar(string.Format("SELECT COUNT(USERNAME) FROM ACCOUNT WHERE USERNAME = N'{0}'", username));
+            if (txtUserName.Text == "")
+            {
+                MessageBox.Show("Tên đăng nhập không được để trống !");
+            }
+            else if (txtDisplayName.Text == "")
+            {
+                MessageBox.Show("Tên hiển thị không được để trống !");
+            }
+            else if (checkUsername == 0)
+            {
+                addAcc(username, displayname, type);
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản đã tồn tại !");
+            }
         }
         #endregion
         #region Bill
