@@ -497,11 +497,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+      "projectUniqueName": "D:\\Download\\ResetPassFeature\\DoAnLTWindow\\DoAnLTWindow.csproj",
       "projectName": "DoAnLTWindow",
-      "projectPath": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+      "projectPath": "D:\\Download\\ResetPassFeature\\DoAnLTWindow\\DoAnLTWindow.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\obj\\",
+      "outputPath": "D:\\Download\\ResetPassFeature\\DoAnLTWindow\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

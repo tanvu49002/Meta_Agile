@@ -279,7 +279,7 @@ namespace DoAnLTWindow
             this.btnResetPass.TabIndex = 4;
             this.btnResetPass.Text = "Đặt Lại Mật Khẩu";
             this.btnResetPass.UseVisualStyleBackColor = false;
-            
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // btnEditAccount
             // 

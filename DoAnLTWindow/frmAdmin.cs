@@ -274,6 +274,18 @@ namespace DoAnLTWindow
             loadAcc();
 
         }
+        void resetPassword(string username)
+        {
+            if (AccDAO.Instance.resetPass(username))
+            {
+                MessageBox.Show("Đặt lại mật khẩu thành công !");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+            }
+
+        }
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
             loadAcc();
@@ -323,6 +335,11 @@ namespace DoAnLTWindow
         {
             string username = txtUserName.Text;
             deleteAccount(username);
+        }
+        private void btnResetPass_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            resetPassword(username);
         }
         #endregion
         #region Bill
