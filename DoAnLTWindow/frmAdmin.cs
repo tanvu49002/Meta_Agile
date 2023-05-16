@@ -20,6 +20,7 @@ namespace DoAnLTWindow
         BindingSource AccountList = new BindingSource();
         public Account LoginAccount;
         frmQuanLy pQL;
+        
         public frmAdmin(frmQuanLy QL)
         {
             
@@ -242,6 +243,19 @@ namespace DoAnLTWindow
             loadAcc();
 
         }
+        void editAcc(string username, string displayname, int type)
+        {
+            if (AccDAO.Instance.updateAcc(username, displayname, type))
+            {
+                MessageBox.Show("Sửa thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+            }
+            loadAcc();
+
+        }
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
             loadAcc();
@@ -267,6 +281,24 @@ namespace DoAnLTWindow
             else
             {
                 MessageBox.Show("Tài khoản đã tồn tại !");
+            }
+        }
+        private void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            string displayname = txtDisplayName.Text;
+            int type = updAccType.Text == "ADMIN" ? 1 : 0;
+            if (txtUserName.Text != "" && txtDisplayName.Text != "")
+            {
+                editAcc(username, displayname, type);
+            }
+            else if (txtUserName.Text == "")
+            {
+                MessageBox.Show("Tên đăng nhập không được để trống !");
+            }
+            else if (txtDisplayName.Text == "")
+            {
+                MessageBox.Show("Tên hiển thị không được để trống !");
             }
         }
         #endregion

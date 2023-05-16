@@ -61,17 +61,10 @@ namespace DoAnLTWindow.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(string.Format("INSERT ACCOUNT (USERNAME, DISPLAYNAME, TYPE) VALUES (N'{0}', N'{1}' , {2} )", name, displayname, type));
             return result > 0;
         }
-        public int updateAcc(string name, string displayname, int type)
+        public bool updateAcc(string name, string displayname, int type)
         {
-            try
-            {
-                int result = (int)DataProvider.Instance.ExecuteScalar(string.Format("UPDATE ACCOUNT SET DISPLAYNAME = N'{0}', TYPE = {1} WHERE USERNAME = N'{2}'", displayname, type, name));
-                return result;
-            }
-            catch
-            {
-                return 0;
-            }
+            int result = DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE ACCOUNT SET DISPLAYNAME = N'{0}', TYPE = {1} WHERE USERNAME = N'{2}'", displayname, type, name));
+            return result > 0;
         }
         public bool deleteAcc(string name)
         {
