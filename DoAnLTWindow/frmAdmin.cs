@@ -234,7 +234,7 @@ namespace DoAnLTWindow
         {
             if (AccDAO.Instance.insertAcc(username, displayname, type))
             {
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Thêm tài khoản thành công !");
             }
             else
             {
@@ -247,7 +247,25 @@ namespace DoAnLTWindow
         {
             if (AccDAO.Instance.updateAcc(username, displayname, type))
             {
-                MessageBox.Show("Sửa thành công");
+                MessageBox.Show("Sửa tài khoản thành công !");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi ! Vui lòng thử lại");
+            }
+            loadAcc();
+
+        }
+        void deleteAccount(string username)
+        {
+            if (LoginAccount.Username.Equals(username))
+            {
+                MessageBox.Show("Tài khoản đang được sử dụng !");
+                return;
+            }
+            if (AccDAO.Instance.deleteAcc(username))
+            {
+                MessageBox.Show("Xóa tài khoản thành công !");
             }
             else
             {
@@ -300,6 +318,11 @@ namespace DoAnLTWindow
             {
                 MessageBox.Show("Tên hiển thị không được để trống !");
             }
+        }
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            deleteAccount(username);
         }
         #endregion
         #region Bill

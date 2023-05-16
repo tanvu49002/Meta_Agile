@@ -301,7 +301,7 @@ namespace DoAnLTWindow
             this.btnDeleteAccount.TabIndex = 1;
             this.btnDeleteAccount.Text = "Xóa tài khoản";
             this.btnDeleteAccount.UseVisualStyleBackColor = false;
-            
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnAddAccount
             // 

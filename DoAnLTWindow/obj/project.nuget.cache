@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fVqCLcJDSfqhd6I8/rwjo59jknKJOE4ZIbdP0EQlH+LfOG3eBi3l50WRqiXaEMrIXTOvC+68Jo5/DpFpw+J3ug==",
+  "dgSpecHash": "TlVNUlVsC4BAGgLpkClaSXPzUvamtyLTJxW5HnvzSFFEgT8mTWh8jpK4e6GCg4ty/nniM9xjMmND2lwBz1Zkbg==",
   "success": true,
-  "projectFilePath": "D:\\Download\\UpdateAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+  "projectFilePath": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.reportviewer.winforms\\10.0.40219.1\\microsoft.reportviewer.winforms.10.0.40219.1.nupkg.sha512",

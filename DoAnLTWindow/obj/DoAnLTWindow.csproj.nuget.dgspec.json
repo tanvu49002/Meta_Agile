@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Download\\UpdateAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
+    "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj": {}
   },
   "projects": {
-    "D:\\Download\\UpdateAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj": {
+    "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Download\\UpdateAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectUniqueName": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "projectName": "DoAnLTWindow",
-        "projectPath": "D:\\Download\\UpdateAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
+        "projectPath": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\DoAnLTWindow.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Download\\UpdateAccountFeature(Admin)\\DoAnLTWindow\\obj\\",
+        "outputPath": "D:\\Download\\DeleteAccountFeature(Admin)\\DoAnLTWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
